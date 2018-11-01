@@ -1,4 +1,6 @@
+import { Seasons } from './service/seasons';
 import { Component } from '@angular/core';
+import { RestfulService } from './service/restful.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular-RESTful-API';
+  seasons = new Array<Seasons>();
+
+  constructor( seaService: RestfulService ) {
+
+    seaService.getSeasons().subscribe(response => {
+      this.seasons = response.map(item => {
+        return new Seasons(
+          item.season,
+          item.episode,
+          item.title
+        );
+      });
+    });
+  }
 }
