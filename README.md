@@ -1,4 +1,4 @@
-# Angular 7 RESTful API (pokedex) using json-mock to serve backend
+# Angular 7 RESTful API using json-mock
 
 <img src="screenshot.PNG" height="400" alt="Screenshot 1"/> 
 
