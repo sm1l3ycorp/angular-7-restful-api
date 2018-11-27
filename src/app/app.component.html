@@ -8,40 +8,27 @@
   style="width: 50%;text-align: center;margin-left: auto;margin-right: auto;">
     <thead class="thead" style="text-align: center;">
     <tr>
-      <th scope="col" style="text-align: center;">Season 1</th>
+      <th scope="col" style="text-align: center;" colspan="7">Pokedex</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let sea of seasons">
-      <td *ngIf="sea.season === 1">Episode:{{ sea.episode }} {{ sea.title }}</td>
-    </tr>
-    </tbody>
-  </table>
-  <br>
-  <table class="table table-bordered table-hover" 
-  style="width: 50%;text-align: center;margin-left: auto;margin-right: auto;">
-    <thead class="thead" style="text-align: center;">
-    <tr>
-      <th scope="col" style="text-align: center;">Season 2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let sea of seasons">
-      <td *ngIf="sea.season === 2">Episode:{{ sea.episode }} {{ sea.title }}</td>
-    </tr>
-    </tbody>
-  </table>
-  <br>
-  <table class="table table-bordered table-hover" 
-  style="width: 50%;text-align: center;margin-left: auto;margin-right: auto;">
-    <thead class="thead" style="text-align: center;">
-    <tr>
-      <th scope="col" style="text-align: center;">Season 3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let sea of seasons">
-      <td *ngIf="sea.season === 3">Episode:{{ sea.episode }} {{ sea.title }}</td>
+      <tr>
+          <td scope="col" style="text-align: center;">#</td>
+          <td scope="col" style="text-align: center;">Name</td>
+          <td scope="col" style="text-align: center;">Type</td>
+          <td scope="col" style="text-align: center;">Height</td>
+          <td scope="col" style="text-align: center;">Weight</td>
+          <td scope="col" style="text-align: center;">Weaknesses</td>
+          <td scope="col" style="text-align: center;">Portrait</td>
+        </tr>
+    <tr *ngFor="let poke of pokemon">
+      <td>{{ poke.id }}</td>
+      <td>{{ poke.name }}</td>
+      <td>{{ poke.type }}</td>
+      <td>{{ poke.height }}</td>
+      <td>{{ poke.weight}}</td>
+      <td>{{ poke.weaknesses }}</td>
+      <td><img src="../assets/images/{{poke.id}}.png"></td>
     </tr>
     </tbody>
   </table>

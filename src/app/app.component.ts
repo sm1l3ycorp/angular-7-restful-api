@@ -1,4 +1,4 @@
-import { Seasons } from './service/seasons';
+import { Pokemon } from './service/pokemon';
 import { Component } from '@angular/core';
 import { RestfulService } from './service/restful.service';
 
@@ -9,16 +9,20 @@ import { RestfulService } from './service/restful.service';
 })
 export class AppComponent {
   title = 'Angular-RESTful-API';
-  seasons = new Array<Seasons>();
+  pokemon = new Array<Pokemon>();
 
-  constructor( seaService: RestfulService ) {
+  constructor( pokedexService: RestfulService ) {
 
-    seaService.getSeasons().subscribe(response => {
-      this.seasons = response.map(item => {
-        return new Seasons(
-          item.season,
-          item.episode,
-          item.title
+    pokedexService.getPokemon().subscribe(response => {
+      this.pokemon = response.map(item => {
+        return new Pokemon(
+          item.id,
+          item.num,
+          item.name,
+          item.type,
+          item.height,
+          item.weight,
+          item.weaknesses
         );
       });
     });
